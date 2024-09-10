@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 
-import RootProvider from "@/pr/providers/RootProvider";
+import RootProvider from "@/pr/provider/RootProvider";
 import { ChildContainerProps } from "@/pr/types";
 
 const geistSans = localFont({
@@ -23,7 +23,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: ChildContainerProps) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} w-screen overflow-x-hidden`}
+      >
         <RootProvider>{children}</RootProvider>
       </body>
     </html>
