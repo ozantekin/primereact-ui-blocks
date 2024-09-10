@@ -5,7 +5,16 @@
 
 * {
   font-family: var(--font-geist-sans);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.0325rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
