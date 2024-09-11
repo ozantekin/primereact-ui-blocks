@@ -1,8 +1,8 @@
-import type { Metadata } from "next";
 import localFont from "next/font/local";
-
-import RootProvider from "@/pr/provider/RootProvider";
+import type { Metadata } from "next";
+import RootProvider from "@/pr/providers/RootProvider";
 import { ChildContainerProps } from "@/pr/types";
+import Script from "next/script";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -22,7 +22,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: ChildContainerProps) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <Script id="primereact-tailwind" strategy="beforeInteractive">
+          {`  const style = document.createElement('style')
+              style.innerHTML = '@layer tailwind-base, primereact, tailwind-utilities;'
+              style.setAttribute('type', 'text/css')
+              document.querySelector('head').prepend(style)`}
+        </Script>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} w-screen overflow-x-hidden`}
       >
