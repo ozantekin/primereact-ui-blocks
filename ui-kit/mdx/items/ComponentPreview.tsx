@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { TabView, TabPanel } from "primereact/tabview";
-import { ComponentName, registry } from "@/pr/blocks-preview";
+import { ComponentName, registry } from "@/pr/preview/blocks";
 
 interface ComponentPreviewProps extends React.HTMLAttributes<HTMLDivElement> {
   name: ComponentName;

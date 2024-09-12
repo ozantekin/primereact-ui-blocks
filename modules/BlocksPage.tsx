@@ -19,9 +19,12 @@ export default function BlocksPage({ params }: BlocksPageProps) {
 
       <div className="mb-10">
         <h1 className="text-3xl font-bold">{block.title}</h1>
-        <time dateTime={block.date} className="mb-1 text-slate-600 text-sm">
-          {format(parseISO(block.date), "LLLL d, yyyy")}
-        </time>
+        <span className="text-slate-600 text-sm">
+          <span className="font-medium">Updated:</span>{" "}
+          <time dateTime={block.date}>
+            {format(parseISO(block.date), "LLLL d, yyyy")}
+          </time>
+        </span>
       </div>
 
       <div>

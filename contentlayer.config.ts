@@ -23,7 +23,7 @@ export const Blocks = defineDocumentType(() => ({
 }));
 
 export default makeSource({
-  contentDirPath: "blocks",
+  contentDirPath: "preview/pages",
   documentTypes: [Blocks],
   mdx: {
     rehypePlugins: [
