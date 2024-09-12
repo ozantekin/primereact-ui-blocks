@@ -57,7 +57,7 @@ export default function ReviewAndImageSection() {
       </div>
 
       <Image
-        src="https://fakeimg.pl/800x400?text=primereact/ui+blocks&font=bebas"
+        src="https://fakeimg.pl/800x400?text=primereact/+blocks&font=bebas"
         alt="Image"
         width="800"
       />

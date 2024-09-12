@@ -25,7 +25,7 @@ export default function HomeLayoutView({ children }: ChildContainerProps) {
             href="/"
             onClick={() => set(window, "$routeContext.backToPage", pathname)}
           >
-            primereact/ui blocks
+            primereact/ blocks
           </Link>
         </div>
       </header>

@@ -5,7 +5,7 @@ export default function HeroWithCallToAction() {
   return (
     <div className="text-center max-w-2xl mx-auto">
       <Chip
-        label="primereact/ui blocks - Meet us!"
+        label="primereact/ blocks - Meet us!"
         image="https://i.pravatar.cc/300"
       />
 

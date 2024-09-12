@@ -6,6 +6,7 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./blocks-preview/**/*.{js,ts,jsx,tsx,mdx}",
     "./modules/**/*.{js,ts,jsx,tsx,mdx}",
+    "./ui-kit/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {},
