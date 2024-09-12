@@ -1,40 +1,61 @@
 import * as React from "react";
 
-interface ComponentData {
+interface ComponentDataProps {
   name: string;
   files: string[];
   component?: React.LazyExoticComponent<React.ComponentType<any>>;
 }
 
-interface Registry {
-  [key: string]: ComponentData;
+interface RegistryProps {
+  [key: string]: ComponentDataProps;
 }
 
-const example: Registry = {
+const example: RegistryProps = {
   ReviewAndImageSection: {
     name: "ReviewAndImageSection",
-    files: ["preview/blocks/components/ReviewAndImageSection.tsx"],
+    files: ["preview/blocks/components/hero-header/ReviewAndImageSection.tsx"],
     component: React.lazy(
-      () => import("@/pr/preview/blocks/components/ReviewAndImageSection")
+      () =>
+        import(
+          "@/pr/preview/blocks/components/hero-header/ReviewAndImageSection"
+        )
     ),
   },
   HeroWithCallToAction: {
     name: "HeroWithCallToAction",
-    files: ["preview/blocks/components/HeroWithCallToAction.tsx"],
+    files: [
+      "preview/blocks/components/call-to-actions/HeroWithCallToAction.tsx",
+    ],
     component: React.lazy(
-      () => import("@/pr/preview/blocks/components/HeroWithCallToAction")
+      () =>
+        import(
+          "@/pr/preview/blocks/components/call-to-actions/HeroWithCallToAction"
+        )
     ),
   },
   HeroSignupForm: {
     name: "HeroSignupForm",
-    files: ["preview/blocks/components/HeroSignupForm.tsx"],
+    files: ["preview/blocks/components/authentication/HeroSignupForm.tsx"],
     component: React.lazy(
-      () => import("@/pr/preview/blocks/components/HeroSignupForm")
+      () =>
+        import("@/pr/preview/blocks/components/authentication/HeroSignupForm")
+    ),
+  },
+  FeatureDetailsWithIcons: {
+    name: "HeroSignupForm",
+    files: [
+      "preview/blocks/components/features-section/FeatureDetailsWithIcons.tsx",
+    ],
+    component: React.lazy(
+      () =>
+        import(
+          "@/pr/preview/blocks/components/features-section/FeatureDetailsWithIcons"
+        )
     ),
   },
 };
 
-export const registry: Registry = {
+export const registry: RegistryProps = {
   ...example,
 };
 
@@ -43,11 +64,11 @@ const resolvedExamples = Object.entries(example).map(([key, value]) => ({
   component: () => void 0,
 }));
 
-const updatedExample: Registry = resolvedExamples.reduce(
+const updatedExample: RegistryProps = resolvedExamples.reduce(
   (acc, curr) => ({ ...acc, [curr.name]: curr }),
   {}
 );
 
-export const downloadRegistry: Registry = { ...updatedExample };
+export const downloadRegistryProps: RegistryProps = { ...updatedExample };
 
 export type ComponentName = keyof typeof example;
