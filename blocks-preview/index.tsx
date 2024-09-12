@@ -18,6 +18,20 @@ const example: Registry = {
       () => import("@/pr/blocks-preview/components/ReviewAndImageSection")
     ),
   },
+  HeroWithCallToAction: {
+    name: "HeroWithCallToAction",
+    files: ["blocks-preview/components/HeroWithCallToAction.tsx"],
+    component: React.lazy(
+      () => import("@/pr/blocks-preview/components/HeroWithCallToAction")
+    ),
+  },
+  HeroSignupForm: {
+    name: "HeroSignupForm",
+    files: ["blocks-preview/components/HeroSignupForm.tsx"],
+    component: React.lazy(
+      () => import("@/pr/blocks-preview/components/HeroSignupForm")
+    ),
+  },
 };
 
 export const registry: Registry = {

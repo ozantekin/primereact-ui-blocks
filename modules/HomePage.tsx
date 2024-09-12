@@ -8,6 +8,10 @@ export default function HomePage() {
     .filter((block) => block.group === "marketing")
     .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
 
+  const formBlocks = allBlocks
+    .filter((block) => block.group === "form")
+    .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
+
   return (
     <div className="space-y-8">
       <section className="max-w-4xl  space-y-2 text-pretty">
@@ -35,8 +39,13 @@ export default function HomePage() {
       </section>
 
       <section className="py-4 space-y-4">
-        <h3 className="text-xl font-semibold">Call to Action</h3>
+        <h3 className="text-xl font-semibold">Form</h3>
         <Divider />
+        <div className="grid md:grid-cols-[repeat(auto-fill,_minmax(320px,_1fr))] gap-6">
+          {formBlocks.map((post) => (
+            <BlockCard key={post.url} {...post} />
+          ))}
+        </div>
       </section>
     </div>
   );
