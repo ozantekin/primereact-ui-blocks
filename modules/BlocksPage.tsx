@@ -1,6 +1,6 @@
 import { format, parseISO } from "date-fns";
 import { allBlocks } from "contentlayer/generated";
-import { Mdx } from "@/pr/components/mdx";
+import { Mdx } from "@/pr/ui-kit/mdx";
 import BackToPage from "@/pr/components/BackToPage";
 
 interface BlocksPageProps {
