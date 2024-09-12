@@ -2,7 +2,7 @@ import { Button } from "primereact/button";
 import { Chip } from "primereact/chip";
 import { Image } from "primereact/image";
 
-const reviews = [
+const REVIEWS = [
   {
     stars: 5,
     rating: 4.9,
@@ -42,7 +42,7 @@ export default function ReviewAndImageSection() {
         </div>
 
         <section className="mt-6 lg:mt-10 grid grid-cols-2 gap-x-4">
-          {reviews.map((review, index) => (
+          {REVIEWS.map((review, index) => (
             <div className="py-5" key={index}>
               <div className="flex space-x-1">{renderStars(review.stars)}</div>
               <p className="mt-3 text-sm">

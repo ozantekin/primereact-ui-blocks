@@ -11,9 +11,9 @@ export default function HomeLayoutView({ children }: ChildContainerProps) {
     <div className="flex flex-col min-h-screen">
       <div className="border-b border-slate-100 bg-slate-50 py-3 p-4">
         <div className="flex justify-between lg:justify-center items-center flex-wrap lg:gap-6 gap-1 container mx-auto">
-          <span className="font-semibold">🚀 New Component Released!</span>
+          <span className="font-semibold">🚀 New Blocks Released!</span>
           <span className="line-height-3">
-            Header component is now available. Try it in your next project!
+            Page Section is now available. Try it in your next project!
           </span>
         </div>
       </div>
