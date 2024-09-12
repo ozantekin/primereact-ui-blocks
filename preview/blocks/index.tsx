@@ -13,23 +13,23 @@ interface Registry {
 const example: Registry = {
   ReviewAndImageSection: {
     name: "ReviewAndImageSection",
-    files: ["blocks-preview/components/ReviewAndImageSection.tsx"],
+    files: ["preview/blocks/components/ReviewAndImageSection.tsx"],
     component: React.lazy(
-      () => import("@/pr/blocks-preview/components/ReviewAndImageSection")
+      () => import("@/pr/preview/blocks/components/ReviewAndImageSection")
     ),
   },
   HeroWithCallToAction: {
     name: "HeroWithCallToAction",
-    files: ["blocks-preview/components/HeroWithCallToAction.tsx"],
+    files: ["preview/blocks/components/HeroWithCallToAction.tsx"],
     component: React.lazy(
-      () => import("@/pr/blocks-preview/components/HeroWithCallToAction")
+      () => import("@/pr/preview/blocks/components/HeroWithCallToAction")
     ),
   },
   HeroSignupForm: {
     name: "HeroSignupForm",
-    files: ["blocks-preview/components/HeroSignupForm.tsx"],
+    files: ["preview/blocks/components/HeroSignupForm.tsx"],
     component: React.lazy(
-      () => import("@/pr/blocks-preview/components/HeroSignupForm")
+      () => import("@/pr/preview/blocks/components/HeroSignupForm")
     ),
   },
 };

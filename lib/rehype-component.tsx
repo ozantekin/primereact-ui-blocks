@@ -1,4 +1,4 @@
-import { registry } from "../blocks-preview";
+import { registry } from "../preview/blocks";
 import fs from "fs";
 import path from "path";
 import { u } from "unist-builder";
