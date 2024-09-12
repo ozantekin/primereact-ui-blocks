@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PrimeReact/ ui blocks
 
-## Getting Started
+PrimeReact UI Blocks offers customizable, user-friendly components for fast interface creation. Built with Tailwind CSS, PrimeReact, and PrimeIcons, these blocks simplify your development process.
 
-First, run the development server:
+## Screenshots
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+![Screenshot 1](./readme/home.png)
+![Screenshot 2](./readme/preview.png)
+![Screenshot 3](./readme/code.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## To-Do List
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### September
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- [x] Complete basic features for the initial release
+- [ ] Create 10 blocks
+- [ ] Add dynamic metadata
+- [ ] Enhance user experience for preview/code functionality\*\*
+- [ ] Redesign layout to include a sidebar
 
-## Learn More
+## Contributing
 
-To learn more about Next.js, take a look at the following resources:
+We welcome contributions from the community! Here's how you can help:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Fork the repository**: Click the "Fork" button at the top right of this page to get your own copy of the project.
+2. **Create a new branch**: Create a new branch from `main` to work on (`git checkout -b feature/your-feature-name`).
+3. **Make your changes**: Improve the code, add new features, fix bugs, or enhance the documentation.
+4. **Submit a pull request (PR)**: Once your changes are ready, submit a pull request with a clear description of what you’ve done and why.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Contribution Guidelines
 
-## Deploy on Vercel
+#### Commit Messages
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Use clear and concise commit messages that describe **what** and **why** you made changes (e.g., `Add user authentication feature`, `Fix bug in preview layout`).
+- Keep your commit messages in English and follow the general format:  
+  `type(scope): description`
+  - **type**: The type of change (e.g., `fix`, `feat`, `chore`, `docs`, etc.).
+  - **scope**: The area of the project affected (optional).
+  - **description**: A brief description of the changes.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+#### Pull Request (PR) Guidelines
+
+- Ensure your PR has a descriptive title and provides details about the changes introduced.
+- Reference the issue number in your PR if it solves an existing issue (e.g., `Closes #123`).
+- Keep your PR focused: group related changes together. Avoid including unrelated modifications.
+- Run all tests locally before submitting your PR to ensure no breaking changes.
+- Add relevant documentation and update any affected README sections.
+- Engage in the PR review process by addressing feedback and suggestions promptly.
+
+We look forward to your contributions!
