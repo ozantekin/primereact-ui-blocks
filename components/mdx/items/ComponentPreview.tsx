@@ -36,12 +36,12 @@ export function ComponentPreview({
 
   return (
     <div
-      className={`relative my-4 flex flex-col space-y-2 lg:max-w-[120ch] ${className}`}
+      className={`relative my-4 flex flex-col space-y-2 ${className}`}
       {...props}
     >
       <TabView>
         <TabPanel header="Preview">
-          <div className="relative rounded-md">
+          <div className="relative rounded-md border p-4">
             <React.Suspense
               fallback={
                 <div className="flex items-center text-sm text-muted-foreground">
@@ -70,7 +70,7 @@ export function ComponentPreview({
         </TabPanel>
         <TabPanel header="Code">
           <div className="flex flex-col space-y-4">
-            <div className="w-full rounded-md [&_pre]:my-0 [&_pre]:max-h-[350px] [&_pre]:overflow-auto">
+            <div className="w-full rounded-md [&_pre]:my-0 [&_pre]:max-h-[400px] [&_pre]:overflow-auto">
               {Code}
             </div>
           </div>
