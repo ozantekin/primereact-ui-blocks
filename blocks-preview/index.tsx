@@ -11,11 +11,11 @@ interface Registry {
 }
 
 const example: Registry = {
-  "copy-button": {
-    name: "copy-button",
-    files: ["blocks-preview/components/CopyButton.tsx"],
+  ReviewAndImageSection: {
+    name: "ReviewAndImageSection",
+    files: ["blocks-preview/components/ReviewAndImageSection.tsx"],
     component: React.lazy(
-      () => import("@/pr/blocks-preview/components/CopyButton")
+      () => import("@/pr/blocks-preview/components/ReviewAndImageSection")
     ),
   },
 };
@@ -24,7 +24,6 @@ export const registry: Registry = {
   ...example,
 };
 
-// Componentleri boş bir fonksiyon ile güncelleme (sadece örnekleme amaçlı)
 const resolvedExamples = Object.entries(example).map(([key, value]) => ({
   ...value,
   component: () => void 0,

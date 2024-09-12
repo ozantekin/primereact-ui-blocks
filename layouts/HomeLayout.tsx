@@ -21,7 +21,7 @@ export default function HomeLayoutView({ children }: ChildContainerProps) {
         </div>
       </header>
 
-      <main className="flex-1 p-4">
+      <main className="flex-1 px-4 py-8 lg:py-14">
         <div className="container mx-auto">{children}</div>
       </main>
 

@@ -10,6 +10,9 @@ export const Blocks = defineDocumentType(() => ({
   fields: {
     title: { type: "string", required: true },
     date: { type: "date", required: true },
+    group: { type: "string", required: true },
+    items: { type: "string", required: true },
+    badge: { type: "string", required: false },
   },
   computedFields: {
     url: {

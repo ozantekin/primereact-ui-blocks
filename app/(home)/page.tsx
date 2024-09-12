@@ -1,34 +1,41 @@
 import Link from "next/link";
-import { Button } from "primereact/button";
 import { compareDesc, format, parseISO } from "date-fns";
 import { allBlocks, Blocks } from "contentlayer/generated";
+import { Card } from "primereact/card";
+import { Button } from "primereact/button";
+import { Badge } from "primereact/badge";
+import { Divider } from "primereact/divider";
 
-function PostCard(post: Blocks) {
+function BlockCard(block: Blocks) {
   return (
-    <div className="mb-8">
-      <h2 className="mb-1 text-xl">
-        <Link
-          href={post.url}
-          className="text-blue-700 hover:text-blue-900 dark:text-blue-400"
-        >
-          {post.title}
-        </Link>
-      </h2>
-      <time dateTime={post.date} className="mb-2 block text-xs text-gray-600">
-        {format(parseISO(post.date), "LLLL d, yyyy")}
-      </time>
-    </div>
+    <Link href={block.url} className="block group">
+      <Card title={block.title} subTitle={block.items} className="relative">
+        <Badge value={block.badge} className="absolute top-2 right-2" />
+        <div className="flex flex-wrap gap-2 items-center justify-between">
+          <time dateTime={block.date} className="text-sm text-slate-600">
+            {format(parseISO(block.date), "LLLL d, yyyy")}
+          </time>
+          <Button
+            text
+            icon="pi pi-arrow-right"
+            severity="secondary"
+            aria-label="Read more"
+            className="transform group-hover:translate-x-0.5 transition-transform duration-200"
+          />
+        </div>
+      </Card>
+    </Link>
   );
 }
 
 export default function Home() {
-  const posts = allBlocks.sort((a, b) =>
-    compareDesc(new Date(a.date), new Date(b.date))
-  );
+  const marketingBlocks = allBlocks
+    .filter((block) => block.group === "marketing")
+    .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
 
   return (
-    <div className="space-y-4">
-      <div className="max-w-4xl  space-y-2 text-pretty">
+    <div className="space-y-8">
+      <section className="max-w-4xl  space-y-2 text-pretty">
         <h2 className="font-bold text-2xl">
           Easy-to-use UI Blocks for your next project!
         </h2>
@@ -40,12 +47,22 @@ export default function Home() {
           This is an unofficial extension of PrimeReact, and it is not
           affiliated with PrimeTek.
         </p>
-      </div>
-      <Button label="Get Started" />
+      </section>
 
-      {posts.map((post) => (
-        <PostCard key={post.url} {...post} />
-      ))}
+      <section className="py-4 space-y-4">
+        <h3 className="text-xl font-semibold">Marketing</h3>
+        <Divider />
+        <div className="grid md:grid-cols-[repeat(auto-fill,_minmax(320px,_1fr))] gap-6">
+          {marketingBlocks.map((post) => (
+            <BlockCard key={post.url} {...post} />
+          ))}
+        </div>
+      </section>
+
+      <section className="py-4 space-y-4">
+        <h3 className="text-xl font-semibold">Call to Action</h3>
+        <Divider />
+      </section>
     </div>
   );
 }
