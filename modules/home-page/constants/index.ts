@@ -1,9 +1,9 @@
 export const HOME_CARD_DATA = [
   {
     icon: "pi pi-flag-fill",
-    title: "Customizable Components",
+    title: "Customizable Blocks",
     description:
-      "Modify components easily with Tailwind CSS and PrimeReact for full design flexibility.",
+      "Modify blocks easily with Tailwind CSS and PrimeReact for full design flexibility.",
   },
   {
     icon: "pi pi-circle-fill",
@@ -16,5 +16,6 @@ export const HOME_CARD_DATA = [
     title: "Free and Open Source",
     description:
       "Explore the full source code on GitHub and join the community to contribute and collaborate.",
+    href: "https://github.com/ozantekin/primereact-ui-blocks",
   },
 ];
