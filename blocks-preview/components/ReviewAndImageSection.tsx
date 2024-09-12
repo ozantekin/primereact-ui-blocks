@@ -37,8 +37,8 @@ export default function ReviewAndImageSection() {
         </p>
 
         <div className="mt-7 grid gap-3 w-full sm:inline-flex">
-          <Button>Get started</Button>
-          <Button outlined>Contact us</Button>
+          <Button label="Get started" />
+          <Button label="Contact us" outlined />
         </div>
 
         <section className="mt-6 lg:mt-10 grid grid-cols-2 gap-x-4">
@@ -56,7 +56,11 @@ export default function ReviewAndImageSection() {
         </section>
       </div>
 
-      <Image src="https://placehold.co/800x500" alt="Image" width="800" />
+      <Image
+        src="https://fakeimg.pl/800x400?text=primereact/ui+blocks&font=bebas"
+        alt="Image"
+        width="800"
+      />
     </div>
   );
 }

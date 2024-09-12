@@ -1,7 +1,12 @@
+"use client";
 import { ChildContainerProps } from "@/pr/types";
+import { set } from "lodash";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function HomeLayoutView({ children }: ChildContainerProps) {
+  const pathname = usePathname();
+
   return (
     <div className="flex flex-col min-h-screen">
       <div className="border-b border-slate-100 bg-slate-50 py-3 p-4">
@@ -15,13 +20,17 @@ export default function HomeLayoutView({ children }: ChildContainerProps) {
 
       <header className="border-b border-slate-200 p-4">
         <div className="container mx-auto">
-          <Link className="font-semibold" href="/">
+          <Link
+            className="font-semibold"
+            href="/"
+            onClick={() => set(window, "$routeContext.backToPage", pathname)}
+          >
             primereact/ui blocks
           </Link>
         </div>
       </header>
 
-      <main className="flex-1 px-4 py-8 lg:py-14">
+      <main className="flex-1 px-4 py-6 lg:py-12">
         <div className="container mx-auto">{children}</div>
       </main>
 
