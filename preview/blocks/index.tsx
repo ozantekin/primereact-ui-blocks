@@ -42,7 +42,7 @@ const example: RegistryProps = {
     ),
   },
   FeatureDetailsWithIcons: {
-    name: "HeroSignupForm",
+    name: "FeatureDetailsWithIcons",
     files: [
       "preview/blocks/components/features-section/FeatureDetailsWithIcons.tsx",
     ],
@@ -51,6 +51,14 @@ const example: RegistryProps = {
         import(
           "@/pr/preview/blocks/components/features-section/FeatureDetailsWithIcons"
         )
+    ),
+  },
+  NavbarWithIconsAndSearch: {
+    name: "NavbarWithIconsAndSearch",
+    files: ["preview/blocks/components/navbar/NavbarWithIconsAndSearch.tsx"],
+    component: React.lazy(
+      () =>
+        import("@/pr/preview/blocks/components/navbar/NavbarWithIconsAndSearch")
     ),
   },
 };
