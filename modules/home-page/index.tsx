@@ -10,6 +10,10 @@ export default function HomePage() {
     .filter((block) => block.group === "PAGE_SECTIONS")
     .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
 
+  const applicationSections = allBlocks
+    .filter((block) => block.group === "APPLICATION_UI")
+    .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
+
   return (
     <div className="space-y-8">
       <section className="grid lg:grid-cols-2">
@@ -45,6 +49,7 @@ export default function HomePage() {
       </section>
 
       <BlockSection title="Page Sections" blocks={pageSections} />
+      <BlockSection title="Application UI" blocks={applicationSections} />
     </div>
   );
 }
