@@ -20,4 +20,8 @@ export const SIDEBAR_ITEMS = [
     url: "/docs/hero-header",
     label: "Hero Header",
   },
+  {
+    url: "/docs/navbar",
+    label: "Navbar",
+  },
 ];
