@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import type { Metadata } from "next";
 import RootProvider from "@/pr/providers/RootProvider";
 import { ChildContainerProps } from "@/pr/types";
+import RootLayoutView from "@/pr/layouts/RootLayout";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,7 +26,9 @@ export default function RootLayout({ children }: ChildContainerProps) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} w-screen overflow-x-hidden scroll-smooth`}
       >
-        <RootProvider>{children}</RootProvider>
+        <RootProvider>
+          <RootLayoutView>{children}</RootLayoutView>
+        </RootProvider>
       </body>
     </html>
   );

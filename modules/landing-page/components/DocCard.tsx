@@ -1,5 +1,5 @@
 "use client";
-import { Blocks } from "@/pr/.contentlayer/generated";
+import { Docs } from "@/pr/.contentlayer/generated";
 import Link from "next/link";
 import { Badge } from "primereact/badge";
 import { Card } from "primereact/card";
@@ -8,7 +8,7 @@ import { Button } from "primereact/button";
 import { set } from "lodash";
 import { usePathname } from "next/navigation";
 
-export default function BlockCard(block: Blocks) {
+export default function DocCard(block: Docs) {
   const pathname = usePathname();
 
   return (

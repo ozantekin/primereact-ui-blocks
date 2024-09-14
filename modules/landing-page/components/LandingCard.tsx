@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { HOME_CARD_DATA } from "@/pr/modules/home-page/constants";
+import { LANDING_CARD_DATA } from "@/pr/modules/landing-page/constants";
 import { REF } from "@/pr/lib/constants";
 
 interface CardContentProps {
@@ -26,10 +26,10 @@ function CardContent({ card }: CardContentProps) {
   );
 }
 
-export default function HomeCard() {
+export default function LandingCard() {
   return (
     <>
-      {HOME_CARD_DATA.map((card, index) =>
+      {LANDING_CARD_DATA.map((card, index) =>
         card.href ? (
           <Link key={index} href={`${card.href}?ref=${REF}`} target="_blank">
             <CardContent card={card} />

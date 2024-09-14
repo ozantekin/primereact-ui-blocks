@@ -1,25 +1,19 @@
-import { allBlocks } from "@/pr/.contentlayer/generated";
-import BlockSection from "@/pr/modules/home-page/components/BlockSection";
-import ExternalLink from "@/pr/modules/home-page/components/ExternalLink";
-import HomeCard from "@/pr/modules/home-page/components/HomeCard";
-import PackagesOrbitingCircles from "@/pr/modules/home-page/components/PackagesOrbitingCircles";
-import { compareDesc } from "date-fns";
+import ExternalLink from "@/pr/modules/landing-page/components/ExternalLink";
+import LandingCard from "@/pr/modules/landing-page/components/LandingCard";
+import PackagesOrbitingCircles from "@/pr/modules/landing-page/components/PackagesOrbitingCircles";
+import Link from "next/link";
 
-export default function HomePage() {
-  const pageSections = allBlocks
-    .filter((block) => block.group === "PAGE_SECTIONS")
-    .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
-
+export default function LandingPage() {
   return (
     <div className="space-y-8">
       <section className="grid lg:grid-cols-2">
         <div className="space-y-4 text-pretty ">
           <h2 className="font-bold text-3xl text-indigo-600">
-            Fast and Easy Development with Pre-built UI Blocks
+            Fast and Easy Development with Pre-built UI Docs
           </h2>
           <p>
-            PrimeReact UI Blocks offers customizable, user-friendly components
-            for fast interface creation. Built with{" "}
+            PrimeReact UI Docs offers customizable, user-friendly components for
+            fast interface creation. Built with{" "}
             <ExternalLink
               href="https://tailwindcss.com"
               children="Tailwind CSS"
@@ -31,20 +25,25 @@ export default function HomePage() {
               href="https://primereact.org/icons"
               children="PrimeIcons"
             />
-            , these blocks simplify your development process.
+            , these docs simplify your development process.
           </p>
           <p>
             This unofficial PrimeReact extension speeds up your project with
             pre-built UI components. Not affiliated with PrimeTek.
           </p>
+          <Link
+            href="/docs"
+            className="p-button font-bold !text-white inline-block"
+          >
+            Get Started
+          </Link>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 py-2">
-            <HomeCard />
+            <LandingCard />
           </div>
         </div>
         <PackagesOrbitingCircles />
       </section>
-
-      <BlockSection title="Page Sections" blocks={pageSections} />
     </div>
   );
 }
