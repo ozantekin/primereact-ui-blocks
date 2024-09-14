@@ -1,4 +1,4 @@
-export const HOME_CARD_DATA = [
+export const LANDING_CARD_DATA = [
   {
     icon: "pi pi-flag-fill",
     title: "Customizable Blocks",

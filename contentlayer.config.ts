@@ -2,11 +2,12 @@ import { defineDocumentType, makeSource } from "contentlayer/source-files";
 import { visit } from "unist-util-visit";
 import rehypePrettyCode from "rehype-pretty-code";
 import { rehypeComponent } from "./lib/rehype-component";
+import rehypeSlug from "rehype-slug";
 
-export const Blocks = defineDocumentType(() => ({
-  name: "Blocks",
+export const Docs = defineDocumentType(() => ({
+  name: "Docs",
   contentType: "mdx",
-  filePathPattern: `**/*.mdx`,
+  filePathPattern: `docs/**/*.mdx`,
   fields: {
     title: { type: "string", required: true },
     date: { type: "date", required: true },
@@ -17,16 +18,22 @@ export const Blocks = defineDocumentType(() => ({
   computedFields: {
     url: {
       type: "string",
-      resolve: (block) => `/blocks/${block._raw.flattenedPath}`,
+      resolve: (doc) => `/${doc._raw.flattenedPath}`,
+    },
+    slugAsParams: {
+      type: "string",
+      resolve: (doc: any) =>
+        doc._raw.flattenedPath.split("/").slice(1).join("/"),
     },
   },
 }));
 
 export default makeSource({
-  contentDirPath: "preview/pages",
-  documentTypes: [Blocks],
+  contentDirPath: "./preview",
+  documentTypes: [Docs],
   mdx: {
     rehypePlugins: [
+      rehypeSlug,
       rehypeComponent,
       () => (tree) => {
         visit(tree, (node) => {
