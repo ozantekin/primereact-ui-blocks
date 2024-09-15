@@ -4,6 +4,7 @@ import { Mdx } from "@/pr/ui-kit/mdx";
 import BackToPage from "@/pr/components/BackToPage";
 import { PageOfContents } from "@/pr/modules/docs-page/components/PageOfContents";
 import { getPageOfContents } from "@/pr/lib/toc";
+import SlugNavButtons from "@/pr/modules/docs-page/components/SlugNavButtons";
 
 interface DocsPageProps {
   doc: Docs;
@@ -13,7 +14,7 @@ export default async function DocsPageView({ doc }: DocsPageProps) {
   const toc = await getPageOfContents(doc.body.raw);
 
   return (
-    <div className="relative h-full lg:gap-8 xl:grid xl:grid-cols-[1fr_16rem]">
+    <div className="relative h-full xl:grid xl:grid-cols-[1fr_16rem]">
       <main className="py-4 px-8">
         <div className="space-y-2 mb-10">
           <BackToPage type="text" />
@@ -30,6 +31,8 @@ export default async function DocsPageView({ doc }: DocsPageProps) {
         </div>
 
         <Mdx code={doc.body.code} />
+
+        <SlugNavButtons doc={doc} />
       </main>
 
       <aside className="hidden py-4 px-8 text-sm xl:block border-l">
