@@ -61,6 +61,18 @@ const example: RegistryProps = {
         import("@/pr/preview/blocks/components/navbar/NavbarWithIconsAndSearch")
     ),
   },
+  HeroFormCenterAlignedWithAForm: {
+    name: "HeroFormCenterAlignedWithAForm",
+    files: [
+      "preview/blocks/components/newsletter/HeroFormCenterAlignedWithAForm.tsx",
+    ],
+    component: React.lazy(
+      () =>
+        import(
+          "@/pr/preview/blocks/components/newsletter/HeroFormCenterAlignedWithAForm"
+        )
+    ),
+  },
 };
 
 export const registry: RegistryProps = {

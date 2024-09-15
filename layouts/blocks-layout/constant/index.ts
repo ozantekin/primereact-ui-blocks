@@ -6,7 +6,6 @@ export const SIDEBAR_ITEMS = [
   {
     url: "/docs/authentication",
     label: "Authentication",
-    badge: "New",
   },
   {
     url: "/docs/call-to-action",
@@ -23,5 +22,10 @@ export const SIDEBAR_ITEMS = [
   {
     url: "/docs/navbar",
     label: "Navbar",
+  },
+  {
+    url: "/docs/newsletter",
+    label: "Newsletter",
+    badge: "New",
   },
 ];
