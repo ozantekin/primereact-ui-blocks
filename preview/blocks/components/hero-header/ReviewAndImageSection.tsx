@@ -20,11 +20,10 @@ const REVIEWS = [
 ];
 
 export default function ReviewAndImageSection() {
-  const renderStars = (count: number) => {
-    return Array.from({ length: count }, (_, index) => (
+  const renderStars = (count: number) =>
+    Array.from({ length: count }, (_, index) => (
       <i key={index} className="pi pi-star-fill" />
     ));
-  };
 
   return (
     <div className="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
