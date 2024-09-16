@@ -5,8 +5,8 @@ import { Divider } from "primereact/divider";
 import { InputText } from "primereact/inputtext";
 
 export default function HeroFormCenterAlignedWithAForm() {
-  const renderAvatar = (count: number) => {
-    return Array.from({ length: count }, (_, index) => (
+  const renderAvatar = (count: number) =>
+    Array.from({ length: count }, (_, index) => (
       <Avatar
         key={index}
         image={`https://i.pravatar.cc/300?img=${index + 1}`}
@@ -14,7 +14,6 @@ export default function HeroFormCenterAlignedWithAForm() {
         shape="circle"
       />
     ));
-  };
 
   return (
     <div className="space-y-8 py-4">

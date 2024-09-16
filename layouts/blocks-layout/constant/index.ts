@@ -26,6 +26,10 @@ export const SIDEBAR_ITEMS = [
   {
     url: "/docs/newsletter",
     label: "Newsletter",
+  },
+  {
+    url: "/docs/feedback",
+    label: "Feedback",
     badge: "New",
   },
 ];

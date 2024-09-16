@@ -73,6 +73,23 @@ const example: RegistryProps = {
         )
     ),
   },
+  FeedbackMotionWithPopover: {
+    name: "FeedbackPopover",
+    files: ["preview/blocks/components/feedback/FeedbackMotionWithPopover.tsx"],
+    component: React.lazy(
+      () =>
+        import(
+          "@/pr/preview/blocks/components/feedback/FeedbackMotionWithPopover"
+        )
+    ),
+  },
+  FeedbackMotion: {
+    name: "FeedbackPopover",
+    files: ["preview/blocks/components/feedback/FeedbackMotion.tsx"],
+    component: React.lazy(
+      () => import("@/pr/preview/blocks/components/feedback/FeedbackMotion")
+    ),
+  },
 };
 
 export const registry: RegistryProps = {
