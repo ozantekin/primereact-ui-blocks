@@ -64,12 +64,7 @@ export default function FeedbackMotionWithPopover() {
         size="small"
         onClick={(e) => op.current?.toggle(e)}
       />
-      <OverlayPanel
-        ref={op}
-        unstyled
-        className="bg-white border rounded-md mt-2 p-4"
-        onHide={resetForm}
-      >
+      <OverlayPanel ref={op} onHide={resetForm}>
         <form onSubmit={handleSubmit}>
           <motion.div
             initial={{ opacity: 0, y: 16, display: "none" }}

@@ -69,7 +69,12 @@ export default function FeedbackMotion() {
               Was this useful?
             </span>
             <div className="flex gap-1 mr-4">{renderStars(5)}</div>
-            <Button type="submit" label="Send" size="small" />
+            <Button
+              type="submit"
+              label="Send"
+              size="small"
+              className="shrink-0"
+            />
           </div>
           <motion.div
             initial={{ opacity: 0, y: 16, display: "none" }}
