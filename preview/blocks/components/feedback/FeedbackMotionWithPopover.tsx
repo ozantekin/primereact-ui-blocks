@@ -24,7 +24,7 @@ export default function FeedbackMotionWithPopover() {
         onMouseLeave={() => setHoveredStar(0)}
       >
         <i
-          className={`pi pi-star-fill text-lg ${
+          className={`pi pi-star-fill text-lg mr-1 ${
             star > index || hoveredStar > index
               ? " text-yellow-400"
               : " text-slate-200"
@@ -90,7 +90,7 @@ export default function FeedbackMotionWithPopover() {
             <span className="font-medium text-slate-500 mr-2">
               Was this useful?
             </span>
-            <div className="flex gap-1 mr-4">{renderStars(5)}</div>
+            <div className="mr-3">{renderStars(5)}</div>
             <Button type="submit" label="Send" size="small" />
           </div>
         </form>
