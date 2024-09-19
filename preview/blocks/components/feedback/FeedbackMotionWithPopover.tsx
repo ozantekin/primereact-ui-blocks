@@ -2,7 +2,6 @@ import React from "react";
 import { Button } from "primereact/button";
 import { OverlayPanel } from "primereact/overlaypanel";
 import { InputTextarea } from "primereact/inputtextarea";
-import { motion } from "framer-motion";
 import { Divider } from "primereact/divider";
 import { Toast } from "primereact/toast";
 
@@ -57,7 +56,7 @@ export default function FeedbackMotionWithPopover() {
   };
 
   return (
-    <div className="min-h-72 relative">
+    <div className="min-h-80 relative">
       <Toast ref={toast} position="bottom-right" className="!absolute" />
       <Button
         label="Feedback"
@@ -66,15 +65,20 @@ export default function FeedbackMotionWithPopover() {
       />
       <OverlayPanel ref={op} onHide={resetForm}>
         <form onSubmit={handleSubmit}>
-          <motion.div
-            initial={{ opacity: 0, y: 16, display: "none" }}
-            animate={{
-              opacity: star > 0 ? 1 : 0,
-              y: star > 0 ? 0 : 16,
-              display: star > 0 ? "block" : "none",
-            }}
-            transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
+          <div className="flex items-center">
+            <span className="font-medium text-slate-500 mr-2">
+              Was this useful?
+            </span>
+            <div className="mr-3">{renderStars(5)}</div>
+            <Button type="submit" label="Send" size="small" />
+          </div>
+
+          <div
+            className={`${
+              star > 0 ? "animate-flipup h-40" : "h-0"
+            } animate-duration-[500ms] transition-[height] duration-500 overflow-hidden`}
           >
+            <Divider />
             <InputTextarea
               rows={4}
               className="w-full"
@@ -82,16 +86,6 @@ export default function FeedbackMotionWithPopover() {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
-
-            <Divider />
-          </motion.div>
-
-          <div className="flex items-center">
-            <span className="font-medium text-slate-500 mr-2">
-              Was this useful?
-            </span>
-            <div className="mr-3">{renderStars(5)}</div>
-            <Button type="submit" label="Send" size="small" />
           </div>
         </form>
       </OverlayPanel>
