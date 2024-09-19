@@ -25,6 +25,7 @@ export function PreCustom(props: PreProps) {
       {...props}
     >
       <Button
+        unstyled
         className="absolute right-3 top-3"
         size="small"
         icon={isCopied ? "pi pi-check" : "pi pi-copy"}

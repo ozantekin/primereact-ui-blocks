@@ -1,7 +1,6 @@
 import React from "react";
 import { Button } from "primereact/button";
 import { InputTextarea } from "primereact/inputtextarea";
-import { motion } from "framer-motion";
 import { Divider } from "primereact/divider";
 import { Toast } from "primereact/toast";
 import { useClickOutside } from "primereact/hooks";
@@ -24,10 +23,10 @@ export default function FeedbackMotion() {
         onMouseLeave={() => setHoveredStar(0)}
       >
         <i
-          className={`pi pi-star-fill text-lg mr-1  ${
+          className={`pi pi-star-fill text-lg mr-1 ${
             star > index || hoveredStar > index
-              ? " text-yellow-400"
-              : " text-slate-200"
+              ? "text-yellow-400"
+              : "text-slate-200"
           }`}
         />
       </button>
@@ -76,14 +75,10 @@ export default function FeedbackMotion() {
               className="shrink-0"
             />
           </div>
-          <motion.div
-            initial={{ opacity: 0, y: 16, display: "none" }}
-            animate={{
-              opacity: star > 0 ? 1 : 0,
-              y: star > 0 ? 0 : 16,
-              display: star > 0 ? "block" : "none",
-            }}
-            transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
+          <div
+            className={`${
+              star > 0 ? "animate-flipup h-40" : "animate-fadeout h-0"
+            } animate-duration-[500ms] transition-[height] duration-500 overflow-hidden`}
           >
             <Divider />
             <InputTextarea
@@ -93,7 +88,7 @@ export default function FeedbackMotion() {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
-          </motion.div>
+          </div>
         </form>
       </div>
     </div>
